@@ -1,0 +1,19 @@
+{
+  "name": "market-quant",
+  "description": "Institutional Market Microstructure, Order-Flow Divergence, Intraday Smart-Money Clock, and Multi-Model Agent Fleet Extension & Skill for GitHub Copilot CLI",
+  "version": "1.0.0",
+  "author": {
+    "name": "P0W"
+  },
+  "keywords": [
+    "quant",
+    "market-microstructure",
+    "chaikin-money-flow",
+    "hurst-exponent",
+    "volume-profile",
+    "multi-model-agents",
+    "copilot-extension"
+  ],
+  "extensions": "com.github.copilot/extensions",
+  "skills": "skills/"
+}
