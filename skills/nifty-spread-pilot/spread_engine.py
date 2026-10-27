@@ -29,7 +29,8 @@ HOW THIS ENGINE WORKS (HIGH-LEVEL OVERVIEW):
 
 5. Three-Regime OCO State Machine (`evaluate_live_credit_spread`):
    - Regime A1 (`NO_LOSS_PROFIT_LOCK_OCO`): Position is in net profit AND has enough cushion to absorb
-     worst-case GTT limit-order slippage while still locking >= Rs 0 net profit after charges.
+     model-implied GTT limit-order slippage while preserving >= Rs 0 net profit after charges under
+     continuous-market fill assumptions (subject to overnight/intraday gap risk beyond the limit buffer).
    - Regime A2 (`PROFIT_LOCK_INFEASIBLE`): Position is slightly green on LTP, but too close to breakeven
      to fund GTT limit-order slippage buffers without risking a net loss on a spike.
    - Regime B (`LOSS_MINIMIZATION_OCO`): Position is underwater (in loss) but inside the max-loss cap.

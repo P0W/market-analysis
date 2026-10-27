@@ -1,7 +1,7 @@
 {
   "name": "market-quant-marketplace",
   "metadata": {
-    "description": "Institutional Market Microstructure, Multi-Model Agent Fleet, and Live ANSI Terminal HUD Extension & Skill for GitHub Copilot CLI",
+    "description": "Cross-Sectional Market Diagnostics, Multi-Model Agent Grounding, and Live ANSI Terminal HUD Extension & Skill for GitHub Copilot CLI",
     "version": "1.0.0"
   },
   "owner": {
@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "market-quant",
-      "description": "Institutional quantitative & microstructure analysis engine with live ANSI terminal HUD, multi-model 5-desk agent fleet orchestration, and Quorum blackboard telemetry.",
+      "description": "Deterministic market diagnostics engine with live ANSI terminal HUD, SHA-256 grounded 5-desk agent orchestration, and Quorum blackboard telemetry.",
       "version": "1.0.0",
       "source": "./plugin"
     }

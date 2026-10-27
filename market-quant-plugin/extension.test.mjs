@@ -1,6 +1,6 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -130,5 +130,19 @@ describe("market-quant ANSI HUD & Telemetry", () => {
             desc.length > 0 && desc.length <= 1024,
             `SKILL.md description length (${desc.length}) must be <= 1024 chars for Copilot CLI slash command registration`,
         );
+    });
+
+    it("maintains a single canonical market_quant_engine.py under plugin/skills/market-quant", () => {
+        const canonicalEngine = join(__dirname, "plugin", "skills", "market-quant", "market_quant_engine.py");
+        const duplicateExtensionCopy = join(
+            __dirname,
+            "plugin",
+            "com.github.copilot",
+            "extensions",
+            "market-quant",
+            "market_quant_engine.py",
+        );
+        assert.ok(existsSync(canonicalEngine), "Canonical market_quant_engine.py must exist under plugin/skills/market-quant");
+        assert.ok(!existsSync(duplicateExtensionCopy), "Duplicate market_quant_engine.py should not exist in extension directory");
     });
 });
